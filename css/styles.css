@@ -14,6 +14,24 @@ html {
    margin-right: auto;
    border: 1px solid black;
    border-radius: 3%;
-   width: 45rem;
-   height: 60rem;
+   width: 40vw;
+   height: 80vh;
+}
+
+.display {
+   position: relative;
+   margin-top: 2vh;
+   margin-left: auto;
+   margin-right: auto;
+   border: 1px solid black;
+   width: 95%;
+   height: 15%;
+}
+
+.display .display-content {
+   position: absolute;
+   right: 5px;
+   bottom: 0px;
+   text-align: right;
+   font-size: 6.5rem;
 }
