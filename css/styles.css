@@ -1,0 +1,19 @@
+html {
+   font-size: 62.5%;
+}
+
+.title{
+   text-align: center;
+   font-size: 2.5rem;
+}
+
+
+.calculator{
+   margin-top: 2vh;
+   margin-left: auto;
+   margin-right: auto;
+   border: 1px solid black;
+   border-radius: 3%;
+   width: 45rem;
+   height: 60rem;
+}
