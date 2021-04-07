@@ -1,3 +1,6 @@
+let numberValue = 0;
+let operatorValue = '';
+
 function add(a, b) {
    return a + b;
 }
@@ -25,4 +28,10 @@ function operate(operator, num1, num2){
       case '/':
          return divide(num1, num2);
    };
+}
+
+function displayValue(value){
+   const display = document.querySelector('.display-content');
+   display.textContent = value;
+   numberValue = value;
 }
