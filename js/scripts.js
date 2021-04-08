@@ -89,6 +89,21 @@ function initialize(){
                }
             });
          break;
+         case '.':
+            btn.addEventListener('click', () => {
+               const display = document.querySelector('.display-content');
+               if(!display.textContent.includes('.')){
+                  if(operatorValue != ''){
+                     numberValue2 += btn.textContent;
+                     displayValue(numberValue2);
+                  }
+                  else {
+                     numberValue1 += btn.textContent;
+                     displayValue(numberValue1);
+                  }
+               }
+            });
+         break;
          case 'C':
          case 'CE':
             btn.addEventListener('click', () => {
