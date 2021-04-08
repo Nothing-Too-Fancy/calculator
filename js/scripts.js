@@ -22,8 +22,8 @@ function divide(a, b){
 
 function operate(operator, num1, num2){
    let finalValue = 0;
-   num1 = parseInt(num1);
-   num2 = parseInt(num2);
+   num1 = parseFloat(num1);
+   num2 = parseFloat(num2);
    switch (operator) {
       case '+':
          finalValue = add(num1, num2);
@@ -42,6 +42,7 @@ function operate(operator, num1, num2){
          break;
    };
    numberValue1 = finalValue;
+   numberValue2 = '';
    return finalValue;
 }
 
@@ -61,7 +62,7 @@ function initialize(){
          case '+':
          case '-':
             btn.addEventListener('click', () => {
-               if (!isNaN(parseInt(numberValue1)) && !isNaN(parseInt(numberValue2))){
+               if (!isNaN(parseFloat(numberValue1)) && !isNaN(parseFloat(numberValue2))){
                   displayValue(operate(operatorValue, numberValue1, numberValue2));
                }
                operatorValue = btn.textContent;
@@ -100,7 +101,7 @@ function initialize(){
          case '=':
             btn.addEventListener('click', () => {
                if(operatorValue != '' && !isNaN(numberValue1)){
-                  if(isNaN(parseInt(numberValue2))){
+                  if(isNaN(parseFloat(numberValue2))){
                      numberValue2 = numberValue1;
                      displayValue(operate(operatorValue, numberValue1, numberValue2));
                   }
