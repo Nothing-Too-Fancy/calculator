@@ -1,5 +1,5 @@
-let numberValue1 = NaN;
-let numberValue2 = NaN;
+let numberValue1 = '';
+let numberValue2 = '';
 let operatorValue = '';
 
 initialize();
@@ -22,6 +22,8 @@ function divide(a, b){
 
 function operate(operator, num1, num2){
    let finalValue = 0;
+   num1 = parseInt(num1);
+   num2 = parseInt(num2);
    switch (operator) {
       case '+':
          finalValue = add(num1, num2);
@@ -56,7 +58,7 @@ function initialize(){
          case '+':
          case '-':
             btn.addEventListener('click', () => {
-               if (!isNaN(numberValue1) && !isNaN(numberValue2)){
+               if (!isNaN(parseInt(numberValue1)) && !isNaN(parseInt(numberValue2))){
                   displayValue(operate(operatorValue, numberValue1, numberValue2));
                }
                operatorValue = btn.textContent;
@@ -74,27 +76,28 @@ function initialize(){
          case '0':
             btn.addEventListener('click', () => {
                if(operatorValue != ''){
-                  numberValue2 = parseInt(btn.textContent);
+                  numberValue2 += btn.textContent;
+                  displayValue(numberValue2);
                }
                else {
-               numberValue1 = parseInt(btn.textContent);
+               numberValue1 += btn.textContent;
+               displayValue(numberValue1);
                }
-               displayValue(btn.textContent);
             });
          break;
          case 'C':
          case 'CE':
             btn.addEventListener('click', () => {
                displayValue(0);
-               numberValue1 = NaN;
-               numberValue2 = NaN;
+               numberValue1 = '';
+               numberValue2 = '';
                operatorValue = '';
             });
          break;
          case '=':
             btn.addEventListener('click', () => {
                if(operatorValue != '' && !isNaN(numberValue1)){
-                  if(isNaN(numberValue2)){
+                  if(isNaN(parseInt(numberValue2))){
                      numberValue2 = numberValue1;
                      displayValue(operate(operatorValue, numberValue1, numberValue2));
                   }
