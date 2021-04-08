@@ -35,6 +35,9 @@ function operate(operator, num1, num2){
          finalValue = multiply(num1, num2);
          break;
       case '/':
+         if (num2 == 0){
+            return "GAME OVER";
+         }
          finalValue = divide(num1, num2);
          break;
    };
