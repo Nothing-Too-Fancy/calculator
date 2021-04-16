@@ -115,14 +115,8 @@ function initialize(){
          break;
          case '=':
             btn.addEventListener('click', () => {
-               if(operatorValue != '' && !isNaN(numberValue1)){
-                  if(isNaN(parseFloat(numberValue2))){
-                     numberValue2 = numberValue1;
-                     displayValue(operate(operatorValue, numberValue1, numberValue2));
-                  }
-                  else{
-                     displayValue(operate(operatorValue, numberValue1, numberValue2));
-                  }
+               if(operatorValue != '' && numberValue1 != '' && numberValue2 != ''){
+                  displayValue(operate(operatorValue, numberValue1, numberValue2));
                }
             });
       }
